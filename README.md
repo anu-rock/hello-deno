@@ -8,12 +8,12 @@ What else did you expect? Let's spread some positivity in tough times!
 
 #### Concepts Covered
 
-- Deno programs
-- security and permissions
-- importing external modules
-- making network calls
-- unit testing
-- TypeScript
+- writng a Deno program (`index.js`)
+- security and permissions (see [Running](#running))
+- importing external modules (inside `index.js`)
+- making network calls (inside `index.js`)
+- unit testing (`tests/util_test.ts`)
+- writing TypeScript and creating models (all code + interfaces inside `models/`)
 
 #### Running
 
@@ -38,3 +38,8 @@ Produces an output like:
 > test getDateString() works correctly with double-digit date ... ok (1ms)
 >
 > test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out (4ms)
+
+---
+
+Copyleft 2020 • MIT licensed  
+Anurag Bhandari <ab@anuragbhandari.com>
