@@ -1,4 +1,4 @@
-# Hello, Deno
+# Hello, Deno [![Build Status](https://travis-ci.com/anuragbhd/hello-deno.svg?branch=master)](https://travis-ci.com/anuragbhd/hello-deno)
 
 <img width="100" alt="Deno logo animated" src="https://camo.githubusercontent.com/135431e1073ba63356d050b4f449d1cc503f457c/68747470733a2f2f64656e6f6c69622e6769746875622e696f2f616e696d617465642d64656e6f2d6c6f676f2f64656e6f2d636972636c652d32346670732e676966" />
 
