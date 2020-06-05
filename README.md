@@ -20,6 +20,7 @@ What else did you expect? Let's spread some positivity in tough times!
 - Making network calls (inside `index.js`)
 - Debugging a Deno program (see [Debugging](#debugging))
 - Unit testing (see [Testing](#testing))
+- Inspecting dependencies (see [Dependency Inspection](#dependency-inspection))
 - Continuous integration & deployment (see [CI/CD](#cicd))
 
 #### Running
@@ -53,6 +54,30 @@ Using VS Code's debugger is not very complicated even in the case of Deno apps. 
 To start debugging, go to VS Code's **Run** sidebar and start the "Deno Debug" script. Then on, you should be able to do something like this:
 
 ![Debugging a Deno program](https://user-images.githubusercontent.com/1288616/83829482-98959580-a700-11ea-86a2-a1b4e7199d3b.png)
+
+#### Dependency Inspection
+
+Since unlike Node.js Deno does not use a package manager and rather relies on the use of distributed http-hosted external modules, manually keeping a tab on a file's dependency tree may get difficult.
+
+You can use Deno's built-in tool for the purpose:
+
+```bash
+deno info <file or URL>
+```
+
+For example, our `util_test.ts` file depends on a local module (util.js) and an external module called asserts.ts. The asserts.ts module in turn depends on more modules. How do find that out? Simple:
+
+```bash
+$ deno info tests/util_test.ts
+
+...
+deps:
+file:///Users/anurag/Code/Sandbox/hello-deno/tests/util_test.ts
+  ├─┬ https://deno.land/std/testing/asserts.ts
+  │ ├── https://deno.land/std/fmt/colors.ts
+  │ └── https://deno.land/std/testing/diff.ts
+  └── file:///Users/anurag/Code/Sandbox/hello-deno/util.ts
+```
 
 #### CI/CD
 
