@@ -18,6 +18,7 @@ What else did you expect? Let's spread some positivity in tough times!
 - Security and permissions (see [Running](#running))
 - Importing external modules (inside `tests/util_test.js`)
 - Making network calls (inside `index.js`)
+- Debugging a Deno program (see [Debugging](#debugging))
 - Unit testing (see [Testing](#testing))
 - Continuous integration & deployment (see [CI/CD](#cicd))
 
@@ -44,6 +45,14 @@ Produces an output like:
 > test getDateString() works correctly with double-digit date ... ok (1ms)
 >
 > test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out (4ms)
+
+#### Debugging
+
+Using VS Code's debugger is not very complicated even in the case of Deno apps. It's a tad similar to how we use it with pure, simple Node.js programs. See the file `.vscode/launch.json` to learn more.
+
+To start debugging, go to VS Code's **Run** sidebar and start the "Deno Debug" script. Then on, you should be able to do something like this:
+
+![Debugging a Deno program](https://user-images.githubusercontent.com/1288616/83829482-98959580-a700-11ea-86a2-a1b4e7199d3b.png)
 
 #### CI/CD
 
