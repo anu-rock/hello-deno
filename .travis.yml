@@ -6,6 +6,11 @@ before_install:
 
 script:
   - deno test
+  - deno bundle index.ts > public/bundle.js
+
+deploy:
+  provider: surge
+  project: ./public/
 
 notifications:
   email:

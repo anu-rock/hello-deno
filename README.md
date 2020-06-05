@@ -96,7 +96,9 @@ Also see the [CI/CD](#cicd) section below on how we are using this feature for c
 
 #### CI/CD
 
-This repo uses the wonderful [Travis CI](https://travis-ci.com/) service for continuous integration. Our CI pipeline is probably the simplest one possible: it just runs unit tests.
+This repo uses the wonderful [Travis CI](https://travis-ci.com/) service for continuous integration & deployment, and the [surge.sh](https://surge.sh/) service as our deployment/web server.
+
+Our CI pipeline is probably the simplest one possible: it just runs unit tests and builds a JS bundle. Our CD pipeline then picks up the bundle and deploys it to Surge.
 
 Since official support for Deno does not yet exist in most (or any!) CI providers, we have to rely on our own hacks. Before running the pipeline, we instruct Travis to install Deno and make it available globally:
 
@@ -107,7 +109,14 @@ before_install:
 
 script:
   - deno test
+  - deno bundle index.ts > public/bundle.js
 ```
+
+Check [this page](https://docs.travis-ci.com/user/deployment/surge/) for details on configuring your own Surge deployment.
+
+If all goes well, your Surge site will look like this:
+
+![Deployed site on Surge.sh](https://user-images.githubusercontent.com/1288616/83832615-b9151e00-a707-11ea-85e5-8c67de38abca.png)
 
 ---
 
