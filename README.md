@@ -21,6 +21,7 @@ What else did you expect? Let's spread some positivity in tough times!
 - Debugging a Deno program (see [Debugging](#debugging))
 - Unit testing (see [Testing](#testing))
 - Inspecting dependencies (see [Dependency Inspection](#dependency-inspection))
+- Creating a browser-friendly bundle (see [Bundling](#bundling))
 - Continuous integration & deployment (see [CI/CD](#cicd))
 
 #### Running
@@ -78,6 +79,20 @@ file:///Users/anurag/Code/Sandbox/hello-deno/tests/util_test.ts
   │ └── https://deno.land/std/testing/diff.ts
   └── file:///Users/anurag/Code/Sandbox/hello-deno/util.ts
 ```
+
+#### Bundling
+
+One of the key goals behind Deno is to keep its APIs as close to the web standards as possible. So classes, functions and variables outside of Deno namespace are named as per modern web standards. Eg. fetch, TextEncoder, console, crypto, window, and so on.
+
+This is a powerful thing. It means that we can potentially run the same Deno program on both server and browser.
+
+Our little program `index.ts` is browser-friendly. We can use Deno's built-in bundler to combine all dependencies and generate a single file to use as a script/module inside a static HTML file:
+
+```bash
+deno bundle index.js > public/bundle.js
+```
+
+Also see the [CI/CD](#cicd) section below on how we are using this feature for continuous deployment.
 
 #### CI/CD
 
