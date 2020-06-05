@@ -118,6 +118,10 @@ If all goes well, your Surge site will look like this:
 
 ![Deployed site on Surge.sh](https://user-images.githubusercontent.com/1288616/83832615-b9151e00-a707-11ea-85e5-8c67de38abca.png)
 
+#### Bonus
+
+Deno Package Manager ([dpm](https://github.com/anuragbhd/dpm))
+
 ---
 
 Copyleft 2020 • MIT licensed  
